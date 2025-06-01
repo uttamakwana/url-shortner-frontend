@@ -46,7 +46,7 @@ api.interceptors.response.use(response => response, async (error) => {
         } catch (err) {
             console.error("Error while getting new access token from backend!", err);
             queryClient.clear();
-            navigate("/login", {
+            navigate("/", {
                 state: {
                     redirectUrl: window.location.pathname
                 }
