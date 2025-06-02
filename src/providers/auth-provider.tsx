@@ -29,7 +29,7 @@ export const AuthProvider = () => {
     }
 
     if (data == undefined) {
-        return <Navigate to={"/login"} replace state={{
+        return <Navigate to={"/landing"} replace state={{
             rediretUrl: window.location.pathname
         }} />
     } else {

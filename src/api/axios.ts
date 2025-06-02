@@ -39,14 +39,18 @@ api.interceptors.response.use(response => response, async (error) => {
 
             if (accessToken) {
                 config.headers.Authorization = `Bearer ${accessToken}`
-                updateToken(accessToken)
+                console.log(window.location.pathname);
+                if(window.location.pathname === "/") {
+                    navigate("/dashboard");
+                }
+                updateToken(accessToken);
             }
 
             return authApi(config);
         } catch (err) {
             console.error("Error while getting new access token from backend!", err);
             queryClient.clear();
-            navigate("/", {
+            navigate("/landing", {
                 state: {
                     redirectUrl: window.location.pathname
                 }

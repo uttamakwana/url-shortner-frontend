@@ -17,7 +17,7 @@ export const UserProfile = ({ name, email }: UserProfileProps) => {
             const response = await logoutUser();
             if(response.message) {
                 toast.success(response.message);
-                navigate("/login");
+                navigate("/");
             }
         } catch (error) {
             console.log(error);

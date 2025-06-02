@@ -12,6 +12,7 @@ const App = () => {
             <Route index element={<Landing />} />
             <Route path="/dashboard" element={<Dashboard />} />
         </Route>
+        <Route path="/landing" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
     </Routes>;
