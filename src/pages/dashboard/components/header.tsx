@@ -17,8 +17,8 @@ export const Header = ({ user }: HeaderProps) => (
     transition={{ duration: 0.4 }}
     className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
   >
-    <h1 className="text-2xl lg:text-4xl font-bold text-neutral-900 flex items-center gap-2">
-      <Sparkles className="text-purple-500 h-8 w-8" />
+    <h1 className="text-2xl lg:text-4xl font-bold text-foreground flex items-center gap-2">
+      <Sparkles className="text-[var(--brand)] h-8 w-8" />
       Shortify
     </h1>
     {user && <UserProfile name={user.name} email={user.email} />}

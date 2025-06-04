@@ -62,9 +62,9 @@ export const Dashboard = () => {
     }, []);
 
     return (
-        <div className="bg-neutral-50">
-            <div className="min-h-screen bg-white px-4 md:px-10 max-w-6xl mx-auto flex flex-col gap-6">
-                <div className="flex flex-col gap-6 sticky top-0 py-4 md:py-10 bg-white z-10">
+        <div className="bg-background">
+            <div className="min-h-screen bg-background px-4 md:px-10 max-w-6xl mx-auto flex flex-col gap-6">
+                <div className="flex flex-col gap-6 sticky top-0 py-4 md:py-10 bg-background z-10">
                     <Header user={user} />
                     <UrlShortenerForm
                         isPending={isPending}

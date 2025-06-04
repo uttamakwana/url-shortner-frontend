@@ -1,5 +1,6 @@
 // components/UserProfile.tsx
 import { logoutUser } from "@/api";
+import { ModeToggle } from "@/components/theme-toggle";
 import { getInitials } from "@/lib/utils";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -26,20 +27,21 @@ export const UserProfile = ({ name, email }: UserProfileProps) => {
     }
 
     return (
-        <div className="flex items-center gap-4">
-            <div className="rounded-full bg-purple-500 text-white w-12 h-12 flex items-center justify-center text-xl font-semibold shadow-sm">
+        <div className="flex items-start gap-4">
+            <div className="rounded-full bg-[var(--brand)] text-white w-12 h-12 flex items-center justify-center text-xl font-semibold shadow-sm">
                 {getInitials(name)}
             </div>
             <div>
-                <h2 className="text-xl font-bold text-neutral-800">{name}</h2>
-                <p className="text-sm text-neutral-500">{email}</p>
+                <h2 className="text-xl font-bold text-foreground">{name}</h2>
+                <p className="text-sm text-secondary-foreground">{email}</p>
                 <button
-                    className="cursor-pointer flex ai-center gap-2 text-sm text-stone-500 hover:underline"
+                    className="cursor-pointer flex ai-center gap-2 text-sm text-muted-foreground hover:underline"
                     onClick={handleLogout}
                 >
                     Logout
                 </button>
             </div>
+            <ModeToggle />
         </div>
     )
 };

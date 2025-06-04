@@ -38,18 +38,18 @@ export const Login = () => {
     mutate({ email, password })
   }
   return (
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
       <motion.div className="w-full max-w-md p-6" initial={{ y: -20 }} animate={{ y: 0 }} transition={{ duration: 0.3 }}>
         <Card>
           <CardContent>
-            <h2 className="text-3xl font-semibold text-center text-neutral-800 mb-6">Login</h2>
+            <h2 className="text-3xl font-semibold text-center text-forground mb-6">Login</h2>
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <Input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" required />
               <Input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
               <Button type="submit" className="w-full" disabled={isPending}>Login</Button>
             </form>
-            <p className="text-center text-sm text-neutral-500 mt-4">
-              Don't have an account? <Link to="/register" className="text-purple-600 hover:underline">Register</Link>
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              Don't have an account? <Link to="/register" className="text-[var(--brand)] hover:underline">Register</Link>
             </p>
           </CardContent>
         </Card>

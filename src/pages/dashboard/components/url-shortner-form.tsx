@@ -22,7 +22,7 @@ export const UrlShortenerForm = ({
         transition={{ delay: 0.1, duration: 0.4 }}
     >
         <form
-            className="bg-white p-4 rounded-2xl shadow-normal"
+            className="bg-accent p-4 rounded-2xl shadow-normal"
             onSubmit={(e) => {
                 const isSuccessfullSubmission = onSubmit(e, url);
                 if (isSuccessfullSubmission) {

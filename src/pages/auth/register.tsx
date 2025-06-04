@@ -36,18 +36,18 @@ export const Register = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
       <Card className="w-full max-w-md p-6 shadow-lg">
         <CardContent>
-          <h2 className="text-3xl font-semibold text-center text-neutral-800 mb-6">Create Account</h2>
+          <h2 className="text-3xl font-semibold text-center text-foreground mb-6">Create Account</h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <Input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="Full Name" required />
             <Input value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" required />
             <Input value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" required />
             <Button type="submit" className="w-full" disabled={isPending}>Register</Button>
           </form>
-          <p className="text-center text-sm text-neutral-500 mt-4">
-            Already have an account? <Link to="/login" className="text-purple-600 hover:underline">Login</Link>
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            Already have an account? <Link to="/login" className="text-[var(--brand)] hover:underline">Login</Link>
           </p>
         </CardContent>
       </Card>

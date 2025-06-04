@@ -36,7 +36,7 @@ export const UrlCard = ({ url, onRedirect }: UrlCardProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Card className="rounded-xl border border-gray-100 hover:border-purple-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+      <Card className="rounded-xl border border-border hover:border-accent shadow-sm hover:shadow-md transition-all duration-300 group">
         <CardContent className="p-4">
           {/* Original URL */}
           <p className="text-sm text-gray-600 truncate mb-2 font-medium">
@@ -47,7 +47,7 @@ export const UrlCard = ({ url, onRedirect }: UrlCardProps) => {
           <div className="flex items-center gap-2 mb-3">
             <motion.div
               className={cn(
-                "text-purple-600 font-medium w-full text-left truncate",
+                "text-[var(--brand)] font-medium w-full text-left truncate",
                 isHovered && "underline"
               )}
               animate={{
@@ -74,8 +74,8 @@ export const UrlCard = ({ url, onRedirect }: UrlCardProps) => {
               >
                 <Copy
                   className={cn(
-                    "h-4 w-4 text-gray-500",
-                    copied && "text-purple-600"
+                    "h-4 w-4 text-muted-foreground",
+                    copied && "text-[var(--brand)]"
                   )}
                 />
               </motion.div>
@@ -84,7 +84,7 @@ export const UrlCard = ({ url, onRedirect }: UrlCardProps) => {
 
           {/* Stats and actions */}
           <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-xs text-gray-500">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <div className="flex items-center gap-1">
                 <MousePointerClick className="h-3 w-3" />
                 <span>{clicks || 0} clicks</span>
@@ -118,7 +118,7 @@ export const UrlCard = ({ url, onRedirect }: UrlCardProps) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="w-full bg-purple-50 text-purple-600 text-xs p-2 text-center rounded-b-xl"
+              className="w-full bg-secondary text-[var(--brand)] text-xs p-2 text-center rounded-b-xl"
             >
               Copied to clipboard!
             </motion.div>

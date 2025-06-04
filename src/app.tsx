@@ -2,6 +2,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { AuthProvider } from "./providers/auth-provider";
 import { Dashboard, Landing, Login, Register } from "./pages";
 import { setNavigate } from "./lib";
+import { ThemeProvider } from "./providers/theme-provider";
 
 const App = () => {
     const navigate = useNavigate();
@@ -19,5 +20,7 @@ const App = () => {
 }
 
 export const InitializeApp = () => {
-    return <App />
+    return <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <App />
+    </ThemeProvider>
 }
